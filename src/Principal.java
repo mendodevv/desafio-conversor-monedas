@@ -1,17 +1,10 @@
-import com.google.gson.stream.JsonToken;
-
-import java.io.IOException;
-
 public class Principal {
     public static void main(String[] args) {
-        ConvertirMoneda moneda = new ConvertirMoneda();
-        Moneda prueba = moneda.convertirMoneda("mxn");
-
-        System.out.println(prueba);
+        ObtenerMoneda moneda = new ObtenerMoneda();
+        Moneda prueba = moneda.obtenerMoneda("usd", 20);
 
 
-        double resultado = prueba.mxn() * prueba.usd();
-        System.out.println(resultado);
+
 
 
     }

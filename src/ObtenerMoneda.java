@@ -7,8 +7,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class ConvertirMoneda {
-    public Moneda convertirMoneda(String moneda) {
+public class ObtenerMoneda {
+    public Moneda obtenerMoneda(String moneda, double cantidad) {
         URI direccion = URI.create("https://v6.exchangerate-api.com/v6/f1539955b3b7e9fc21c862b9/latest/" + moneda.toUpperCase());
 
         HttpClient client = HttpClient.newHttpClient();
@@ -26,10 +26,19 @@ public class ConvertirMoneda {
 
         JsonObject jsonObject = new Gson().fromJson(response.body(), JsonObject.class);
         String baseCode = jsonObject.get("base_code").getAsString();
+
         double usd = jsonObject.get("conversion_rates").getAsJsonObject().get("USD").getAsDouble();
         double mxn = jsonObject.get("conversion_rates").getAsJsonObject().get("MXN").getAsDouble();
         double clp = jsonObject.get("conversion_rates").getAsJsonObject().get("CLP").getAsDouble();
         double ars = jsonObject.get("conversion_rates").getAsJsonObject().get("ARS").getAsDouble();
+
+        switch (moneda.toUpperCase()) {
+            case "USD": usd = cantidad; break;
+            case "MXN": mxn = cantidad; break;
+            case "CLP": clp = cantidad; break;
+            case "ARS": ars = cantidad; break;
+        }
+
         return new Moneda(baseCode, usd, mxn, clp, ars);
     }
 }
