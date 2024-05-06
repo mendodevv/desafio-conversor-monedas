@@ -1,3 +1,8 @@
 public class ConvertirMoneda {
-    public Moneda convertirMoneda(Moneda moneda) {}
+    public double convertirMoneda(double cantidad, double moneda, int opcion) {
+        double conversion;
+        conversion = cantidad * moneda;
+
+        return conversion;
+    }
 }
