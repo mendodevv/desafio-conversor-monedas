@@ -3,9 +3,13 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("***************************************");
-        System.out.println("Bienvenido al conversor de monedas!");
-        String menu = """
+        int opcion = -1;
+        double cantidad;
+
+        while (opcion != 0) {
+            System.out.println("***************************************");
+            System.out.println("Bienvenido al conversor de monedas!");
+            String menu = """
                 1. Dólar --> Peso Mexicano
                 2. Peso Mexicano --> Dólar
                 3. Dólar --> Peso Chileno
@@ -14,44 +18,64 @@ public class Principal {
                 6. Peso Argentino --> Dólar
                 7. Salir
                 """;
-        System.out.println(menu);
-        System.out.println("Por favor elige una opción válida");
+            System.out.println(menu);
+            System.out.println("Por favor elige una opción válida");
 
-        ObtenerMoneda moneda = new ObtenerMoneda();
-        ConvertirMoneda convertirMoneda = new ConvertirMoneda();
-        int opcion = entrada.nextInt();
+            ObtenerMoneda moneda = new ObtenerMoneda();
+            ConvertirMoneda convertirMoneda = new ConvertirMoneda();
 
-        System.out.println("Ingrese el valor que desea convertir: ");
-        double cantidad = entrada.nextDouble();
+            if (entrada.hasNextInt()) {
+                opcion = entrada.nextInt();
+            } else {
+                System.out.println("Opción no válida. Por favor, ingrese un número.");
+                entrada.next();
+                continue;
+            }
 
-        Moneda valores;
-        double conversion;
+            if (opcion == 7) {
+                System.out.println("Cerrando aplicación...");
+                break;
+            }
 
-        switch (opcion) {
-            case 1: valores = moneda.obtenerMoneda("usd", cantidad);
+            System.out.println("Ingrese el valor que desea convertir: ");
+            if (entrada.hasNextDouble()) {
+                cantidad = entrada.nextDouble();
+            } else {
+                System.out.println("Cantidad no válida. Por favor, ingrese un número.");
+                entrada.next();
+                continue;
+            }
+
+            Moneda valores;
+            double conversion;
+
+            switch (opcion) {
+                case 1: valores = moneda.obtenerMoneda("usd", cantidad);
                     conversion = convertirMoneda.convertirMoneda(cantidad, valores.mxn(),opcion);
                     System.out.println("El valor de " + cantidad + "[USD] corresponde al valor de: " + conversion + "[MXN]");
                     break;
-            case 2: valores = moneda.obtenerMoneda("mxn", cantidad);
+                case 2: valores = moneda.obtenerMoneda("mxn", cantidad);
                     conversion = convertirMoneda.convertirMoneda(cantidad, valores.usd(),opcion);
                     System.out.println("El valor de " + cantidad + "[MXN] corresponde al valor de: " + conversion + "[USD]");
                     break;
-            case 3: valores = moneda.obtenerMoneda("usd", cantidad);
+                case 3: valores = moneda.obtenerMoneda("usd", cantidad);
                     conversion = convertirMoneda.convertirMoneda(cantidad, valores.clp(),opcion);
                     System.out.println("El valor de " + cantidad + "[USD] corresponde al valor de: " + conversion + "[CLP]");
                     break;
-            case 4: valores = moneda.obtenerMoneda("clp", cantidad);
+                case 4: valores = moneda.obtenerMoneda("clp", cantidad);
                     conversion = convertirMoneda.convertirMoneda(cantidad, valores.usd(),opcion);
                     System.out.println("El valor de " + cantidad + "[CLP] corresponde al valor de: " + conversion + "[USD]");
                     break;
-            case 5: valores = moneda.obtenerMoneda("usd", cantidad);
+                case 5: valores = moneda.obtenerMoneda("usd", cantidad);
                     conversion = convertirMoneda.convertirMoneda(cantidad, valores.ars(),opcion);
                     System.out.println("El valor de " + cantidad + "[USD] corresponde al valor de: " + conversion + "[ARS]");
                     break;
-            case 6: valores = moneda.obtenerMoneda("ars", cantidad);
+                case 6: valores = moneda.obtenerMoneda("ars", cantidad);
                     conversion = convertirMoneda.convertirMoneda(cantidad, valores.usd(),opcion);
                     System.out.println("El valor de " + cantidad + "[ARS] corresponde al valor de: " + conversion + "[USD]");
                     break;
+            }
         }
+
     }
 }
