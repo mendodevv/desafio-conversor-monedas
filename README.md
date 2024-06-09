@@ -1,7 +1,7 @@
 # Conversor de Moneda
 <img src="/imagenes-conversor/BANNER-CONVERSOR.png">
 
-Este proyecto, llamado "Conversor de Moneda", es una aplicación de consola en Java que permite a los usuarios convertir diferentes tipos de monedas.
+Este proyecto, llamado "Conversor de Moneda", es una aplicación de consola en Java que permite a los usuarios convertir diferentes tipos de monedas, así como poder ver su historial de conversiones.
 
 ## Descripción del proyecto
 El proyecto utiliza Java como lenguaje de programación. La estructura del proyecto está organizada en varias clases, incluyendo `ObtenerMoneda`, `ConvertirMoneda` y `Moneda`.
@@ -26,7 +26,7 @@ El proyecto está organizado en varias clases:
 - `ConvertirMoneda`: Esta clase se encarga de realizar las conversiones de moneda.
 - `Moneda`: Esta clase define los valores de conversión para las diferentes monedas.
 
-Además, contamos con la clase `Principal` que maneja la lógica principal de la aplicación. Esta clase maneja la interacción con el usuario y la ejecución de las funcionalidades. Cada opción mostrada en el menú se realiza con su propio método interno, definido en `Principal`.
+Además, contamos con la clase `Principal` que maneja la lógica principal de la aplicación. Esta clase maneja la interacción con el usuario y la ejecución de las funcionalidades. Cada opción mostrada en el menú se realiza a través de un `switch`, definido en `Principal`.
 
 ## Organización del código de manera gráfica
 <img src="/imagenes-conversor/DIAGRAMA-CONVERSOR.png">
@@ -80,4 +80,27 @@ Además, contamos con la clase `Principal` que maneja la lógica principal de la
 El proyecto no requiere de dependencias externas.
 
 ## Ejecución de la aplicación
-Para ejecutar la aplicación, simplemente ejecute la clase `Principal`. La aplicación se comunicará con el usuario a través de la consola.
+**Clonar el repositorio**
+
+Para empezar, necesitas clonar el repositorio en tu máquina local. Puedes hacerlo utilizando el siguiente comando en tu terminal:
+   `git clone https://github.com/mendodevv/desafio-literalura.git`
+   
+O si lo prefieres, puedes presionar el botón verde `code<>` del repositorio y descargar los archivos como ZIP
+
+1. Para ejecutar la aplicación, simplemente ejecute la clase `Principal`. La aplicación se comunicará con el usuario a través de la consola.
+2. Una vez que la aplicación esté en ejecución, puedes interactuar con ella a través de la consola. Se te presentará un menú con varias opciones para realizar conversiones entre diferentes monedas. Simplemente sigue las instrucciones en pantalla para interactuar con la aplicación.
+
+NOTA: Para ver el historial de tus conversiones, cierra la aplicación. Verás que se genera un archivo `conversiones.txt`, en el mismo estará la fecha en la que usaste la aplicación, y todas las conversiones que hayas realizado en esa fecha. Asimismo una vez hayas usa
+
+## Tecnologías utilizadas
+- Java SE17
+- Para el desarrollo del código, se uso el IDE IntelliJ
+
+## Estado del proyecto
+
+Finalizado
+
+## Licencias
+
+MIT License.
+
