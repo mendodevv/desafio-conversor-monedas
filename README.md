@@ -28,6 +28,54 @@ El proyecto está organizado en varias clases:
 
 Además, contamos con la clase `Principal` que maneja la lógica principal de la aplicación. Esta clase maneja la interacción con el usuario y la ejecución de las funcionalidades. Cada opción mostrada en el menú se realiza con su propio método interno, definido en `Principal`.
 
+## Organización del código de manera gráfica
+<img src="/imagenes-conversor/DIAGRAMA-CONVERSOR.png">
+
+## Demostración de la aplicación
+<table>
+  <tr>
+    <td>
+      <p>Menú: muestra las opciones a elegir por el usuario</p>
+      <img src="imagenes-conversor/menu.png" alt="Menú del programa" width="400"/>
+    </td>
+    <td>
+      <p>Opción 1: Convertir de dólares a pesos mexicanos </p>
+      <img src="imagenes-conversor/opcion1.png" alt="Opción 1" width="400"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Opción 2: Convertir de pesos mexicanos a dólares </p>
+      <img src="imagenes-conversor/opcion2.png" alt="Opción 2" width="400"/>
+    </td>
+    <td>
+      <p>Opción 3: Convertir de dólares a pesos chilenos </p>
+      <img src="imagenes-conversor/opcion3.png" alt="Opción 3" width="400"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Opción 4: Convertir de pesos chlenos a dólares </p>
+      <img src="imagenes-conversor/opcion4.png" alt="Opción 4" width="400"/>
+    </td>
+    <td>
+      <p>Opción 5: Convertir de dólares a pesos argentinos </p>
+      <img src="imagenes-conversor/opcion5.png" alt="Opción 5" width="400"/>
+    </td>
+  </tr>
+  </tr>
+  <tr>
+    <td>
+      <p>Opción 6: Convertir de pesos argentinos a dólares </p>
+      <img src="imagenes-conversor/opcion6.png" alt="Opción 6" width="400"/>
+    </td>
+    <td>
+      <p>Opción 7: Mostrar el historial de conversiones </p>
+      <img src="imagenes-conversor/opcion7.png" alt="Opción 7" width="400"/>
+    </td>
+  </tr>
+</table>
+
 ## Dependencias
 El proyecto no requiere de dependencias externas.
 
